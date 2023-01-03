@@ -1,0 +1,89 @@
+/********************** icon size **********************/
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+/********************** nav  **********************/
+@media (min-width: 1024px) {
+    .top-navbar{
+        display: inline-flex !important;
+    }
+}
+.parent:hover .child { /*暫時用不到*/
+    display: block;
+    top:40px;
+}
+#mydate::-webkit-datetime-edit-day-field, #mydate::-webkit-datetime-edit-year-field, 
+#mydate::-webkit-datetime-edit-text{ /*不顯示 日、年、斜線*/
+    /* display: none; */
+}
+#mydate::-webkit-datetime-edit-year-field{ /*不顯示 日、年、斜線*/
+    /* -webkit-datetime-edit-year-field : display(none) ; */
+    /* display: none; */
+}
+#mydate::-webkit-calendar-picker-indicator{ /*加大點選date picker的範圍條件*/
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+.mydatelabel, #mydate {
+    position: relative;
+    display: block;
+}
+
+.mydatelabel::after {
+    content: attr(data-domain);
+    position: absolute;
+    top: 0px;
+    left: 28px;
+}
+/********************** check switch  **********************/
+.toggle__dot {
+    top: -.25rem;
+    left: -.25rem;
+    transition: all 0.3s ease-in-out;
+}
+  
+input:checked ~ .toggle__dot {
+    transform: translateX(100%);
+    background-color: #5bd38d;
+}
+/********************** calendar_day_lines  **********************/
+.lines {
+    height: 40px;
+}
+.lines::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    margin-top: -1px;
+    z-index: 3;
+    pointer-events: none;
+}
+/********************** print 列印 (20210308不確定有沒有用到，可刪除)  **********************/
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+    }
+}
+
+/********************** bg-color  **********************/
+.bg-lime-200 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(230, 255, 30, var(--tw-bg-opacity));
+}
+
+/********************** hashtag # 快速導覽標籤 (20210310有替代方案 可刪除)  **********************/
+a.anchor {
+    display: block;
+    position: relative;
+    top: -75px;
+    visibility: hidden;
+}
